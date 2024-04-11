@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/73995d4a25.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container">
+        <form id="taxForm">
+            <div class="form-group">
+                <label for="income">Enter gross annual income</label>
+                <span class="fa-solid fa-question fa-2xs popup" id = "myPopup1" onmouseover="popup(this)" onmouseout="popup(this)">
+                    <span class="popuptext" id="childmyPopup1">Gross annual income in your total salary in a year before any deductions</span>
+                </span>
+                <br>
+                <i class="error-icon fa-solid fa-exclamation popup" id="incomeErrorIcon" onmouseover="popup(this)" onmouseout="popup(this)">
+                    <span class="popuptext" id="childincomeErrorIcon">Please enter numbers only</span>
+                </i>
+                <input type="number" id="income" class="form-control" placeholder="Enter gross annual income">
+                
+            </div>
+            <div class="form-group">
+                <label for="extra_income">Enter extra income</label>
+                <span class="fa-solid fa-question fa-2xs popup" id = "myPopup2" onmouseover="popup(this)" onmouseout="popup(this)">
+                    <span class="popuptext" id="childmyPopup2">Extra income in a year before any deductions</span>
+                </span>
+                <br>
+                <i class="error-icon fa-solid fa-exclamation popup" id="extraIncomeErrorIcon" onmouseover="popup(this)" onmouseout="popup(this)">
+                    <span class="popuptext" id="childextraIncomeErrorIcon">Please enter numbers only</span>
+                </i>
+                <input type="number" id="extra_income" class="form-control" placeholder="Enter extra income">
+            </div>
+            <div class="form-group">
+                <label for="age">Enter age group</label>
+                <span class="fa-solid fa-question fa-2xs popup" id = "myPopup3" onmouseover="popup(this)" onmouseout="popup(this)">
+                    <span class="popuptext" id="childmyPopup3">Select age criteria in which you lie on</span>
+                </span>
+                <br>
+                <i class="error-icon fa-solid fa-exclamation popup" id="ageErrorIcon" onmouseover="popup(this)" onmouseout="popup(this)">
+                    <span class="popuptext" id="childageErrorIcon">Please select option</span>
+                </i>
+                <select id="age" class="form-control">
+                    <optgroup>
+                        <option value=""></option>
+                        <option value="<40">&lt; 40</option>
+                        <option value="≥40 & <60">&ge; 40 &lt; 60</option>
+                        <option value="≥60">&ge; 60</option>
+                    </optgroup>
+                    
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="deductions">Enter total application deductions</label>
+                <span class="fa-solid fa-question fa-2xs popup" id = "myPopup4" onmouseover="popup(this)" onmouseout="popup(this)">
+                    <span class="popuptext" id="childmyPopup4">Total deductions from your salary and extra income in a year</span>
+                </span>
+                <br>
+                <i class="error-icon fa-solid fa-exclamation popup" id="deductionsErrorIcon" onmouseover="popup(this)" onmouseout="popup(this)">
+                    <span class="popuptext" id="childdeductionsErrorIcon">Please enter numbers only</span>
+                </i>
+                <input type="number" id="deductions" class="form-control" placeholder="Enter total application deductions">
+            </div>
+            <button type="submit" class="btn1">Submit</button>
+        </form>
+    </div>
+
+    <div class="modal" id="resultModal">
+        <div class="modal-content">
+            <!--span class="close">&times;</span-->
+            <center>
+                <div id="result"></div>
+                <button type="submit" class="close btn2">Close</button>
+            </center>
+        </div>
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
